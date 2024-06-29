@@ -24,4 +24,13 @@ urlpatterns = [
     path('success/', success_page),
     path('courses/<name>', courseDetails),
     path('people-details/', peopleDetails),
+
+
+
+     
+    # path('course/<slug:name>', courseDetails) ,    # java-123  for slug case
+    # path('course/<int:name>', courseDetails),    # 1    for int case
+    # path('course/<str:name>', courseDetails),  # java  for string case
+    path('course/<name>', courseDetails),  # java or 1 or java-123-abc    for all types
+
 ]
