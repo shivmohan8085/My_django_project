@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block start %}
+
+    <div class="container main">
+
+        
+
+       <!-- call and print list in html -->
+
+        {% for n in languages %}  
+        <div>{{forloop.counter}}  {{n}}</div> <!-- indexing start with 1-->
+        {% endfor %}
+    </br>
+        {% for n in languages %}
+        <div>{{forloop.counter0}}  {{n}}</div> <!-- indexing start with 0-->
+        {% endfor %}
+    </br>
+        {% for n in languages %}
+        <div>{{forloop.revcounter}}  {{n}}</div> <!-- reverse indexing-->
+        {% endfor %}
+    </br>
+
+       <!--- call and print Dictionary in html -->
+
+        <div>
+            <h1>{{title}}</h1>
+            <table border=1 cellpadding='10'>
+                <tr> 
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Able for Voting</th>
+                </tr>
+
+                {% for i in peoples%}
+                <tr> 
+                    <td>{{i.name}}</td>   <!-- call key value using loop-->
+                    <td>{{i.age}}</td>
+                    {% if i.age >= 18%}
+                    <td>YES</td>
+                    {%else%}
+                    <td>NO</td>
+                    {% endif%}
+                </tr>
+                {%endfor%} 
+            </table>
+        </div>
+        <br/>
+
+    </div>
+{%endblock%}
+
+
