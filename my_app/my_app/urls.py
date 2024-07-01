@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from website.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,12 +26,10 @@ urlpatterns = [
     path('courses/<name>', courseDetails),
     path('people-details/', peopleDetails),
 
-
-
      
     # path('course/<slug:name>', courseDetails) ,    # java-123  for slug case
     # path('course/<int:name>', courseDetails),    # 1    for int case
     # path('course/<str:name>', courseDetails),  # java  for string case
-    path('course/<name>', courseDetails),  # java or 1 or java-123-abc    for all types
+    # path('course/<name>', courseDetails),  # java or 1 or java-123-abc    for all types
 
 ]
