@@ -6,11 +6,12 @@
         <h1>About ZECDATA</h1>
         <p>Welcome to ZECDATA, where we harness the power of data to drive innovative solutions and propel businesses forward. Founded in [Year], ZECDATA has quickly established itself as a leader in data analytics, providing comprehensive services to a diverse range of industries.</p>
 
-        <form>
-            <label for="fname">First name:</label><br>
+        <form action = '/' method = 'POST'>
+            {% csrf_token %}
+            <label for="fname">Name :</label><br>
             <input type="text" id="fname" name="fname"><br>
-            <label for="lname">Last name:</label><br>
-            <input type="text" id="lname" name="lname">
+            <button> send </button>
+
         </form>
 
 

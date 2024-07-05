@@ -32,6 +32,10 @@ def courseDetails(request,name):
 
 
 def home(request):
+    if request.method == 'POST' :
+        # name = request.POST['fname']    
+        name = request.POST.get('fname')  
+        print(name) 
     return render(request,"home.html")
 
 def peopleDetails(request):
