@@ -44,16 +44,31 @@
                                     <input type="checkbox" {% if emp.working %} checked {% endif %} class="form-check-input" id="working" name="emp_working" style="margin-top: 5px;">
                                     <label class="form-check-label" for="working" style="font-weight: bold;">Currently Working</label>
                                 </div>
-    
+
                                 <div class="mb-3">
                                     <label for="department" class="form-label" style="font-weight: bold;">Department</label>
-                                    <select id="department" value="{{emp.department}}" name="emp_department" class="form-control" style="width: 100%;">
+                                    <select id="department" name="emp_department" class="form-control" style="width: 100%;">
                                         <option value="">Select Department</option>
-                                        <option value="CSE">CSE</option>
-                                        <option value="ME">Mechanical</option>
-                                        <option value="EE">Electrical</option>
-                                        <option value="EE">Mining</option>
-
+                                        {% if emp.department == 'CSE' %}
+                                            <option value="CSE" selected>CSE</option>
+                                        {% else %}
+                                            <option value="CSE">CSE</option>
+                                        {% endif %}
+                                        {% if emp.department == 'ME' %}
+                                            <option value="ME" selected>Mechanical</option>
+                                        {% else %}
+                                            <option value="ME">Mechanical</option>
+                                        {% endif %}
+                                        {% if emp.department == 'EE' %}
+                                            <option value="EE" selected>Electrical</option>
+                                        {% else %}
+                                            <option value="EE">Electrical</option>
+                                        {% endif %}
+                                        {% if emp.department == 'EE' %}
+                                            <option value="EE" selected>Mining</option>
+                                        {% else %}
+                                            <option value="EE">Mining</option>
+                                        {% endif %}
                                     </select>
                                 </div>
     
