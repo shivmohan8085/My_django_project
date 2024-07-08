@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect ,get_object_or_404
 from django.http import HttpResponse
-from .models import Emp
+from .models import Emp, Testimonial
+from .forms import FeedBackForm
 
 
 
@@ -85,3 +86,23 @@ def do_update_emp(request, e_id):
         e.save()
     return redirect("/emp/home/")
 
+
+
+def testimonials(request):
+    testi = Testimonial.objects.all()
+    return render(request, "emp/testimonials.html", {'testi':testi})
+
+def feedback(request):
+    if request.method =='POST' :
+        form = FeedBackForm(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data['email'])
+            print(form.cleaned_data['name'])
+            print(form.cleaned_data['feedback'])
+
+            print("Data Saved")
+        else:
+            return render(request, "emp/feedback.html", {'form':form})
+    else:
+        form = FeedBackForm()
+        return render(request, "emp/feedback.html", {'form':form})
